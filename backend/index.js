@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors" ;
 import {app,server} from "./socket/socket.js";
 dotenv.config({}) ;
-import path from "path";
+//import path from "path";
 
 
 
@@ -31,7 +31,7 @@ app.use("/api/v1/message" , messageRoute);
 
 //------Deployment------------
 
-const __dirname1 = path.resolve() ;
+//const __dirname1 = path.resolve() ;
 
 
 //------Deployment-------------

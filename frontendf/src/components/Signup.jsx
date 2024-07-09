@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+
+
 const Signup = () => {
   const [user, setUser] = useState({
     fullName: "",
@@ -12,7 +14,7 @@ const Signup = () => {
   });
   const navigate = useNavigate();
   const handleCheckbox = (gender) => {
-    setUser({...user, gender });
+    setUser({ ...user, gender });
   }
 
   const onSubmitHandler = async (e) => {

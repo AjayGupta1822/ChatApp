@@ -1,17 +1,17 @@
 import React from 'react'
 import SendInput from './SendInput'
 import Messagebox from './Messagebox'
-import {  useSelector } from 'react-redux'
-//import { setSelectedUser } from '../redux/userSlice'
+import {  useSelector,useDispatch } from 'react-redux'
+import { setSelectedUser } from '../redux/userSlice'
 //import store from '../redux/store'
 const MessageContainer = () => {
-    const {selectedUser, authUser, onlineUsers} = useSelector(store=>store.user);
-  // const dispatch = useDispatch();
+    const {selectedUser, authUser, onlineUsers } = useSelector(store => store.user);
+   const dispatch = useDispatch();
   // useEffect(()=>{
   //     return () => dispatch(setSelectedUser(null));
 //},[]);
 
-  const isOnline = selectedUser && onlineUsers.includes(selectedUser._id);
+  const isOnline = onlineUsers?.includes(selectedUser?._id);
   return (
     <> 
         {
@@ -30,12 +30,12 @@ const MessageContainer = () => {
             </div>
           </div>
     </div>
-    <Messagebox/>
-    <SendInput/>
+    <Messagebox />
+    <SendInput />
     </div>
           ) : (
           <div className='md:min-w-[550px] flex flex-col justify-center items-center'>
-            <h1 className='text-4xl text-white font-bold'>Hi, {authUser?.fullName} ! </h1>
+            <h1 className='text-4xl text-white font-bold'>Hi, {authUser?.fullName} </h1>
         <h1 className='text-2xl text-white'>Let's start a conversation</h1>
 
           </div>

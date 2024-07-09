@@ -16,13 +16,12 @@ const navigate = useNavigate() ;
       const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`https://chatapp-3-k5wt.onrender.com/api/v1/user/login`, user)
-          //   {
-          //    headers: {
-          //      'Content-Type': 'application/json'
-           //   },
-           //   withCredentials: true
-          //   });
+            const res = await axios.post(`https://chatapp-3-k5wt.onrender.com/api/v1/user/login`, user, {
+              headers: {
+                'Content-Type': 'application/json'
+              },
+            withCredentials: true
+           });
 
              navigate("/");
              console.log(res);
@@ -50,7 +49,7 @@ const navigate = useNavigate() ;
             </label>
             <input
             value={user.username}
-            onChange={(e)=>setUser({...user,username:e.target.value})}
+            onChange={(e)=>setUser({...user,username: e.target.value})}
              className='w-full input input-bordered h-10' 
             type="text"
             placeholder='Username' />
@@ -60,11 +59,11 @@ const navigate = useNavigate() ;
               <span className='text-base label-text'>Password</span>
             </label>
             <input
-            value={user.password}             onChange={(e)=>setUser({...user,password:e.target.value})}
+            value={user.password}             onChange={(e) => setUser({...user,password: e.target.value})}
             
              className='w-full input input-bordered h-10'
              type="password"
-             placeholder='Ajay' />
+             placeholder='Password' />
           </div>
 
 

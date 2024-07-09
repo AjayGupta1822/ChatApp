@@ -5,7 +5,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAuthUser, setOtherUsers } from '../redux/userSlice';
+import { setAuthUser, setOtherUsers, setSelectedUser } from '../redux/userSlice';
+import { setMessages } from '../redux/messageSlice';
 
 const Sidebar = () => {
     const [search, setSearch] = useState(""); 
@@ -17,10 +18,13 @@ const {otherUsers} = useSelector(store=>store.user);
     const logoutHandler = async () => {
         try {
             const res = await axios.get(`https://chatapp-3-k5wt.onrender.com/api/v1/user/logout`);
-            console.log(res);
+           // console.log(res);
             navigate("/login");
             toast.success(res.data.message);
             dispatch(setAuthUser(null));
+            dispatch(setMessages(null));
+            dispatch(setOtherUsers(null));
+            dispatch(setSelectedUser(null));
         } catch (error) {
             console.log(error);
         }

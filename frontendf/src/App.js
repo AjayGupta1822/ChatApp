@@ -3,7 +3,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Login from './components/Login';
 import HomePage from './components/HomePage';
-import { useEffect,} from 'react';
+import { useEffect } from 'react';
 import {  useDispatch, useSelector } from 'react-redux';
 import io from "socket.io-client";
 import { setSocket } from './redux/socketSlice';
@@ -30,16 +30,16 @@ function App() {
    const dispatch = useDispatch();
 useEffect(()=>{
      if(authUser){
-         const socket = io(`https://chatapp-3-k5wt.onrender.com`,{
+         const socketio = io(`https://chatapp-3-k5wt.onrender.com`,{
         query: {
           userId: authUser._id
         } 
          });
-         dispatch(setSocket(socket));
-         socket.on('getOnlineUsers', (onlineUsers)=>{
+         dispatch(setSocket(socketio));
+         socketio?.on('getOnlineUsers', (onlineUsers)=>{
          dispatch(setOnlineUsers(onlineUsers))
          });
-         return ()=> socket.close();
+         return ()=> socketio.close();
 
     
      }else{
@@ -49,7 +49,7 @@ useEffect(()=>{
       }
      }
 
-},[authUser, socket, dispatch]);
+},[authUser]);
 
   return (
     <div className="p-4 h-screen flex items-center justify-center">

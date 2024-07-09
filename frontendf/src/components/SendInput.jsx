@@ -19,7 +19,7 @@ const SendInput = () => {
             },
             withCredentials:true
         });
-            console.log(res);
+           // console.log(res);
             dispatch(setMessages([...messages, res?.data?.newMessage]))
         } catch (error) {
             console.log(error);
@@ -37,7 +37,7 @@ const SendInput = () => {
         className='border text-sm rounded-lg block w-full p-3 border-zinc-500 bg-gray-600 text-white'
          />
          <button type='submit' className='absolute flex inset-y-0 end-0 items-center pr-4'>
-          <IoSend/>
+          <IoSend />
          </button>
     </div>
     </form>
