@@ -16,14 +16,15 @@ dotenv.config({}) ;
 const PORT = process.env.PORT || 5000 ;
 
 //middleware
+app.use(cors({credentials:true , origin: true}))
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
-const corsOption={
-    origin:'https://chat-app-beryl-kappa.vercel.app',
-    credentials:true
-};
-app.use(cors());
+//const corsOption={
+ //   origin:'https://chat-app-beryl-kappa.vercel.app',
+ //   credentials:true
+//};
+//app.use(cors());
 
 //routes 
 app.use("/api/v1/user" , userRoute);
