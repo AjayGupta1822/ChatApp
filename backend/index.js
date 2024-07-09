@@ -23,7 +23,7 @@ const corsOption={
     origin:'https://chat-app-beryl-kappa.vercel.app',
     credentials:true
 };
-app.use(cors(corsOption));
+app.use(cors());
 
 //routes 
 app.use("/api/v1/user" , userRoute);
