@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
 const corsOption={
-    origin:'https://chat-65nwq5chr-ajaygupta1822s-projects.vercel.app/',
+    origin:'https://chat-app-beryl-kappa.vercel.app',
     credentials:true
 };
 app.use(cors(corsOption));
@@ -39,5 +39,5 @@ const __dirname1 = path.resolve() ;
 
 server.listen(PORT , ()=>{
     connectDB() ;
-    //console.log(`Server listen at prot ${PORT}`);
+    console.log(`Server listen at prot ${PORT}`);
 });
