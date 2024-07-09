@@ -14,7 +14,7 @@ const SendInput = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`https://chatapp-3-k5wt.onrender.com/api/v1/message/send/${selectedUser?._id}`, {message}, {headers:{
+            const res = await axios.post(`https://chatapp-3-k5wt.onrender/api/v1/message/send/${selectedUser?._id}`, {message}, {headers:{
                 'Content-Type':'application/json'
             },
             withCredentials:true
