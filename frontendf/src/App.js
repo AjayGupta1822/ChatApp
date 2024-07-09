@@ -30,7 +30,7 @@ function App() {
    const dispatch = useDispatch();
 useEffect(()=>{
      if(authUser){
-         const socket = io('https://chatapp-3-k5wt.onrender.com',{
+         const socket = io(`https://chatapp-3-k5wt.onrender.com`,{
         query: {
           userId: authUser._id
         } 

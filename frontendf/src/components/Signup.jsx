@@ -18,7 +18,7 @@ const Signup = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 try {
-  const res = await axios.post('https://chatapp-3-k5wt.onrender.com/api/v1/user/register', user, {
+  const res = await axios.post(`https://chatapp-3-k5wt.onrender.com/api/v1/user/register`, user, {
     headers: {
       'Content-Type': 'application/json'
     },

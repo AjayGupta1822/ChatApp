@@ -16,7 +16,7 @@ const {otherUsers} = useSelector(store=>store.user);
 
     const logoutHandler = async () => {
         try {
-            const res = await axios.get('https://chatapp-3-k5wt.onrender.com/api/v1/user/logout');
+            const res = await axios.get(`https://chatapp-3-k5wt.onrender.com/api/v1/user/logout`);
             console.log(res);
             navigate("/login");
             toast.success(res.data.message);
