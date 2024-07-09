@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
 const corsOption={
-    origin:'http://localhost:3000',
+    origin:'https://chat-65nwq5chr-ajaygupta1822s-projects.vercel.app/',
     credentials:true
 };
 app.use(cors(corsOption));
