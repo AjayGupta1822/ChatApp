@@ -11,7 +11,7 @@ const MessageContainer = () => {
    //     return () => dispatch(setSelectedUser(null));
   //  },[]);
 
-  const isOnline = onlineUsers.includes(selectedUser._id);
+  const isOnline = selectedUser && onlineUsers.includes(selectedUser._id);
   return (
     <> 
         {
