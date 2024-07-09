@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux'
 import { setMessages } from '../redux/messageSlice';
@@ -19,7 +19,7 @@ useEffect(()=>{
         }
     }
     fetchMessages();
-}, [selectedUser?._id, setMessages]);
+}, [selectedUser?._id, dispatch]);
 }
 
 export default useGetMessages
